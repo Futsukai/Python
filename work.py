@@ -73,7 +73,7 @@ class main(object):
         num = int(input("请输入存储区块数: "))
         seq = input("请输入作业调度序列: ")
         LRU(num, seq)
-
+        input("Press Any Key Close")
 
 if __name__ == '__main__':
     main()
