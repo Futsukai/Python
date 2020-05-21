@@ -74,7 +74,7 @@ class Process(object):
         return t
 
     def __str__(self):
-        return "进程 %s:\n目前占有量:%s 最大需求量:%s 剩余需求量:%s" % (
+        return "进程 %s:目前占有量:%s 最大需求量:%s 剩余需求量:%s" % (
             self.name,
             self.employ_res,
             self.max_res,
@@ -90,17 +90,17 @@ class DijkstraBanker(object):
         select = 1
         self.sys = Sys()
         self.process_queue = []
-        self.sys.res = Res(names=["A"], nums=[9])
-        self.process_queue.append(
-            Process("P1", Res(names=["A"], nums=[5])))
-        self.process_queue.append(
-            Process("P2", Res(names=["A"], nums=[5])))
-        self.process_queue.append(
-            Process("P3", Res(names=["A"], nums=[5])))
-        self.process_queue.append(
-            Process("P4", Res(names=["A"], nums=[5])))
-        self.process_queue.append(
-            Process("P5", Res(names=["A"], nums=[5])))
+        # self.sys.res = Res(names=["A"], nums=[9])
+        # self.process_queue.append(
+        #     Process("P1", Res(names=["A"], nums=[5])))
+        # self.process_queue.append(
+        #     Process("P2", Res(names=["A"], nums=[5])))
+        # self.process_queue.append(
+        #     Process("P3", Res(names=["A"], nums=[5])))
+        # self.process_queue.append(
+        #     Process("P4", Res(names=["A"], nums=[5])))
+        # self.process_queue.append(
+        #     Process("P5", Res(names=["A"], nums=[5])))
 
         while select != "0":
             select = input(message)
@@ -136,6 +136,7 @@ class DijkstraBanker(object):
 
     def set_process_info(self):
         count = int(input("请输入进程总个数:"))
+        self.process_queue = []
         for i in range(1, count+1):
             process_name = "P" + str(i)
             res = Res()
@@ -217,7 +218,6 @@ class DijkstraBanker(object):
                 if item.name in safe_seq:
                     continue
                 test_sys_res -= item.need_res
-                self.print_line(test_sys_res)
                 if test_sys_res.check_negative():
                     next_index = index + 1
                     if next_index > len(test_queue) or self.sys.res.of_sum() < test_queue[next_index].need_res.of_sum():
