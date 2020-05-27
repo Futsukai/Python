@@ -61,20 +61,22 @@ def par_checker(string, left_rule, right_rule):
     stack = Stack()
     balanced = True
     for str in string:
-        if not balanced:
-            break
         if str in left_rule:
             stack.push(str)
         else:
             if str in right_rule:
+                if stack.is_empty():
+                    balanced = False
+                    break
                 symbol = stack.pop()
                 if left_rule.index(symbol) != right_rule.index(str):
                     balanced = False
-    return balanced
+                    break
+
+    return balanced & stack.is_empty()
 
 
 # 测试内容
-
 
     def test(self):
         t1 = Timer("anagram_solution(\"asdasdsdasdsadasdasdasdasdasdasd\",\"asdasdsdasdsadasdasdasdasdasdasd\")",
@@ -87,4 +89,4 @@ def par_checker(string, left_rule, right_rule):
 
 
 if __name__ == "__main__":
-    print(par_checker("1+(2+3)", "([{", ")]}"))
+    print(par_checker("({[1]+(2+3)})", "([{", ")]}"))
