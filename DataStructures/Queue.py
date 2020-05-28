@@ -36,7 +36,23 @@ class Deque(object):
         return self.items.pop()
 
     def remove_rear(self):
-        return self.item.pop(0)
+        return self.items.pop(0)
 
     def size(self):
         return len(self.items)
+
+
+def palchecker(string):
+    char_deque = Deque()
+    for ch in string:
+        char_deque.add_rear(ch)
+
+    while char_deque.size() > 1:
+        first = char_deque.remove_front()
+        last = char_deque.remove_rear()
+        if first != last:
+            return False
+    return True
+
+if __name__ == "__main__":
+    print(palchecker("abcdecba"))
