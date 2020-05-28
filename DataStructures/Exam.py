@@ -2,7 +2,7 @@
 # !/usr/bin/python3
 
 from timeit import Timer
-from DataStructures.Stack import Stack
+from Stack import Stack
 
 
 # 异序词检测
