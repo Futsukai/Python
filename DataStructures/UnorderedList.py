@@ -1,5 +1,5 @@
 # coding=utf-8
-#!/usr/bin/python3
+# !/usr/bin/python3
 
 
 class Node(object):
@@ -8,7 +8,7 @@ class Node(object):
         self.data = init_data
         self.next = None
 
-    def getData(self):
+    def get_data(self):
         return self.data
 
     def set_data(self, new_data):
@@ -24,7 +24,7 @@ class UnorderedList(object):
         self.head = None
 
     def is_empty(self):
-        return self.head == None
+        return self.head is None
 
     def add(self, item):
         temp = Node(item)
@@ -34,11 +34,12 @@ class UnorderedList(object):
     def lenght(self):
         current = self.head
         count = 0
-        while current != None:
+        while current is not None:
             count += 1
             current = current.get_next()
         return count
-        
+
+
 if __name__ == "__main__":
     n = Node(2)
     print(n.data)

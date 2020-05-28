@@ -1,5 +1,5 @@
 # coding=utf-8
-#!/usr/bin/python3
+# !/usr/bin/python3
 
 
 class Queue(object):
@@ -12,7 +12,7 @@ class Queue(object):
     def enqueue(self, item):
         self.items.insert(0, item)
 
-    def dequeue(self):
+    def de_queue(self):
         return self.items.pop()
 
     def size(self):
@@ -42,7 +42,7 @@ class Deque(object):
         return len(self.items)
 
 
-def palchecker(string):
+def pal_checker(string):
     char_deque = Deque()
     for ch in string:
         char_deque.add_rear(ch)
@@ -54,5 +54,6 @@ def palchecker(string):
             return False
     return True
 
+
 if __name__ == "__main__":
-    print(palchecker("abcdecba"))
+    print(pal_checker("abcdecba"))
