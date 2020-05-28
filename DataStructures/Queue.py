@@ -19,7 +19,7 @@ class Queue(object):
         return len(self.items)
 
 
-class Deque(object):
+class Deques(object):
     def __init__(self):
         self.items = []
 
@@ -43,13 +43,13 @@ class Deque(object):
 
 
 def pal_checker(string):
-    char_deque = Deque()
+    char_deques = Deques()
     for ch in string:
-        char_deque.add_rear(ch)
+        char_deques.add_rear(ch)
 
-    while char_deque.size() > 1:
-        first = char_deque.remove_front()
-        last = char_deque.remove_rear()
+    while char_deques.size() > 1:
+        first = char_deques.remove_front()
+        last = char_deques.remove_rear()
         if first != last:
             return False
     return True
