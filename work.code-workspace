@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": ".",
+		}
+	],
+
+	"settings": {
+		"cSpell.words": [
+			"Deque",
+			"Deques",
+			"timeit"
+		],
+		"python.autoComplete.extraPaths": ["${workspaceRoot}/DataStructures/"],
+		"python.pythonPath": "/Users/zhangwei/Documents/Code/PythonGit/venv/bin/python",
+		"python.envFile": "${workspaceRoot}/.env",
+		"python.venvPath": "/usr/local/bin/virtualenv"
+	},
+}

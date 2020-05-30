@@ -1,6 +1,8 @@
 # coding=utf-8
 # !/usr/bin/python3
 
+# pip3 install virtualenv
+# 
 from timeit import Timer
 from Stack import Stack
 
