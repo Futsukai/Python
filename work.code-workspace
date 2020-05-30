@@ -9,6 +9,7 @@
 		"cSpell.words": [
 			"Deque",
 			"Deques",
+			"exitonclick",
 			"timeit"
 		],
 		"python.autoComplete.extraPaths": ["${workspaceRoot}/DataStructures/"],
