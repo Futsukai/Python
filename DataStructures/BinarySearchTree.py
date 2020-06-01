@@ -11,6 +11,7 @@ class BinarySearchTree(object):
     """
 
     def __init__(self):
+        # var type:TreeNode 变量标注
         self.root = None  # type:TreeNode
         self.size = 0
 
@@ -83,17 +84,17 @@ class BinarySearchTree(object):
         self.delete(key)
 
     def remove(self, currentNode):
-        if currentNode.is_leaf():  # leaf
+        if currentNode.is_leaf():
             if currentNode == currentNode.parent.left_child:
                 currentNode.parent.left_child = None
             else:
                 currentNode.parent.right_child = None
-        elif currentNode.has_both_children():  # interior
+        elif currentNode.has_both_children():
             succ = currentNode.find_successor()
             succ.splice_out()
             currentNode.key = succ.key
             currentNode.payload = succ.payload
-        else:  # this node has one child
+        else:
             if currentNode.has_left():
                 if currentNode.is_left_child():
                     currentNode.left_child.parent = currentNode.parent
