@@ -10,6 +10,7 @@
 			"Deque",
 			"Deques",
 			"exitonclick",
+			"succ",
 			"timeit"
 		],
 		"python.autoComplete.extraPaths": ["${workspaceRoot}/DataStructures/"],
